@@ -1,0 +1,20 @@
+#以空格隔开参数，支持中文。按↑可加载上一行代码#
+1.打印
+print "Hello world!"
+printf 你好，世界
+打印 夏湾牛逼
+
+2. 给予物品
+c_give 斧头 1
+给我 斧头 2
+
+3.清屏
+cls
+清屏
+
+4.时间
+WorldState 早上/中午/晚上
+时间 晚上
+
+NextWorldState
+下一段

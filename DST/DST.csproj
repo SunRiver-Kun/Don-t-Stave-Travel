@@ -1,0 +1,2600 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4FE73562-1994-47BB-96AB-23683D5A9967}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>DST</RootNamespace>
+    <AssemblyName>DST</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Address.cs" />
+    <Compile Include="Armor.cs" />
+    <Compile Include="Backpack.cs" />
+    <Compile Include="Creature.cs" />
+    <Compile Include="Food.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="g_basebuttonfn.cs" />
+    <Compile Include="g_baseresult.cs" />
+    <Compile Include="g_prefabs.cs" />
+    <Compile Include="g_address.cs" />
+    <Compile Include="g_recipes.cs" />
+    <Compile Include="Hat.cs" />
+    <Compile Include="Prefab.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Scane.cs" />
+    <Compile Include="Tool.cs" />
+    <Compile Include="Traveler.cs" />
+    <Compile Include="Weapon.cs" />
+    <Compile Include="Worldtime.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\pickaxe.tex.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\axe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\pickaxe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\firepit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_catcoon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\armorwood.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\armor_grass_woven.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\berries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\berries_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\boomerang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\cane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\cookedmeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\cookedmonstermeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\cookedsmallmeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\cookpot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\critter_kitten_builder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\cutgrass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\fish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\fish_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\fishingrod.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\fishsticks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\flint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\flowerhat_healing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\footballhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\goldnugget.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\hambat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\homesign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\humanmeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\humanmeat_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\kitten_winter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\log.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\meat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\meatballs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\minerhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\monstermeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\nightsword.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\petals.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\piggyback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\pigskin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\smallmeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\spear_rose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\spidergland.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\tent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\tentaclespike.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\tophat_festive_bell_red_firehound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\torch_shadow_alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\turkeydinner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\twigs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\walrushat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\campfire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bedroll_furry_quilt_white_ivory.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bedroll_straw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\butter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\butterfly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\butterflywings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\carrot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\carrot_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\manrabbit_tail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\pighouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\rabbit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\rabbit_winter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\rocks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\strawhat_floppy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\abigail_flower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\abigail_flower_haunted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\abigail_flower2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\acorn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\acorn_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\amulet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\amulet_red_heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\amulet_red_occulteye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\antliontrinket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\armor_dragonfly_fangedcollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\armor_dragonfly_haramaki.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\armor_dragonfly_lamellar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\armor_grass_cloak.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\armor_marble_chainmail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\armor_marble_rockabs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\armor_sanity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\armor_wood_fangedcollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\armor_wood_haramaki.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\armor_wood_lamellar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\armordragonfly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\armorgrass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\armormarble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\armorruins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\armorskeleton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\armorslurper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\armorsnurtleshell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\arrowsign_panel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\arrowsign_post.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\ash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\atrium_key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_basic_blue_catcoon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_basic_green_olive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_bat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_beefalo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_buckle_grey_pewter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_buckle_navy_phthalo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_buckle_red_rook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_camping_green_viridian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_camping_orange_carrot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_camping_red_koalefant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_crab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_deerclops.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_dragonfly_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_glommer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_mandrake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_mushy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_poop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_rabbit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_smallbird.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\backpack_spider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\baconeggs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\balloons_empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bandage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\batbat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\batwing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\batwing_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\beard_monster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\beardhair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bearger_fur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\beargervest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bedroll_furry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bedroll_furry_quilt_blue_frost.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\beebox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\beefalohat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\beefalowool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\beehat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\beemine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\beeswax.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bernie_dead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bernie_inactive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\berries_juicy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\berries_juicy_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bird_egg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bird_egg_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\birdcage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\birdcage_gothic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\birdcage_ornamental.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\birdcage_pirate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\birdcage_romantic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\birdtrap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\blowdart_fire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\blowdart_lava.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\blowdart_lava2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\blowdart_pipe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\blowdart_sleep.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\blowdart_yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\blue_cap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\blue_cap_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\blue_mushroomhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\blueamulet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bluegem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bluemooneye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\blueprint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\blueprint_rare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\boards.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\boneshard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bonestew.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\book_birds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\book_brimstone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\book_brimstone_gilded.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\book_elemental.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\book_fossil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\book_gardening.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\book_sleep.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\book_tentacles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\brush.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bugnet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bundle_large.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bundle_medium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bundle_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bundlewrap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\bushhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\butterflymuffin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\cactus_flower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\cactus_meat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\cactus_meat_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\canary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\canary_poisoned.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\candybag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\cane_ancient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\carrot_seeds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\cartographydesk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\catcoonhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\catcoonhat_trapper_rooster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\catcoonhat_trapperup_rooster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\cave_banana.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\cave_banana_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\cavein_boulder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\charcoal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chesspiece_bearger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chesspiece_bishop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chesspiece_clayhound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chesspiece_clayhound_sketch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chesspiece_claywarg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chesspiece_claywarg_sketch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chesspiece_deerclops.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chesspiece_dragonfly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chesspiece_formal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chesspiece_hornucopia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chesspiece_knight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chesspiece_moosegoose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chesspiece_muse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chesspiece_pawn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chesspiece_pipe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chesspiece_rook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chester_eyebone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chester_eyebone_closed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chester_eyebone_closed_shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chester_eyebone_closed_snow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chester_eyebone_shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\chester_eyebone_snow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\coldfire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\coldfirepit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\compass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\cookedmandrake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\cookpot_cauldron.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\cookpot_survival.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\coontail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\corn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\corn_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\corn_seeds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\critter_dragonling_builder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\critter_glomling_builder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\critter_lamb_builder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\critter_perdling_builder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\critter_puppy_builder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\crow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\cutlichen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\cutreeds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\cutstone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\decrease_health.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\decrease_hunger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\decrease_sanity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\deer_antler1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\deer_antler2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\deer_antler3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\deerclops_eyeball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\deserthat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\diviningrod.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\dragon_scales.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\dragonbodyhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\dragonflychest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\dragonflyfurnace.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\dragonfruit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\dragonfruit_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\dragonfruit_seeds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\dragonheadhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\dragonling_bat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\dragonling_winter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\dragonling_wyvern.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\dragonpie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\dragontailhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\drumstick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\drumstick_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\dug_berrybush.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\dug_berrybush_juicy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\dug_berrybush2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\dug_grass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\dug_marsh_bush.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\dug_sapling.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\durian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\durian_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\durian_seeds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\earmuffshat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\eel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\eel_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\eggplant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\eggplant_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\eggplant_seeds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\endtable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\endtable_carpet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\endtable_dragonfly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\endtable_vintage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\eyebrellahat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\eyeturret_item.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\fast_farmplot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\feather_canary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\feather_crow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\feather_robin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\feather_robin_winter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\featherfan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\featherhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\featherpencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\fence_gate_item.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\fence_item.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\fertilizer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\fireballstaff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\firecrackers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\fireflies.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\firepit_fanged.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\firepit_firebird.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\firepit_hole.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\firepit_stonehenge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\firestaff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\firestaff_bee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\firestaff_meteor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\firestaff_rose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\firesuppressor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\fishtacos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\flowerhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\flowerhat_crown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\flowerhat_holly_wreath.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\flowerhat_ribbon_wreath.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\flowerhat_wreath.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\flowersalad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\foliage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\footballhat_combathelm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\fossil_piece.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\frogglebunwich.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\froglegs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\froglegs_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\fruitmedley.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\furtuft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\gears.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\gift_large1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\gift_large2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\gift_medium1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\gift_medium2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\gift_small1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\gift_small2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\giftwrap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\glassblock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\glassspike.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\glomling_beardeddragon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\glomling_winter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\glommerflower.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\glommerflower_dead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\glommerfuel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\glommerwings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\goatmilk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\goggleshat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\goldenaxe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\goldenpickaxe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\goldenshovel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\goose_feather.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\grass_umbrella.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\green_cap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\green_cap_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\green_mushroomhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\greenamulet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\greengem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\greenmooneye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\greenstaff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\guacamole.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\guano.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\gunpowder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\half_health.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\half_hunger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\half_sanity.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\halloweencandy_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\halloweencandy_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\halloweencandy_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\halloweencandy_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\halloweencandy_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\halloweencandy_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\halloweencandy_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\halloweencandy_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\halloweencandy_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\halloweencandy_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\halloweencandy_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\halloweencandy_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\halloweencandy_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\halloweencandy_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\hambat_spiralcut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\hammer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\hammer_mjolnir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\hat_catcoon_costume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\hat_chester_costume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\hat_dog_helm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\hat_glommer_costume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\hat_hutch_costume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\hat_puppy_cap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\hawaiianshirt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\healingsalve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\healingstaff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\heat_rock1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\heat_rock2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\heat_rock3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\heat_rock4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\heat_rock5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\heatrock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\hivehat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\honey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\honeycomb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\honeyham.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\honeynuggets.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\horn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\hotchili.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\houndstooth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\houndwhistle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\humanmeat_dried.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\hutch_fishbowl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\hutch_fishbowl_dead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\ice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\icebox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\icecream.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\icehat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\icepack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\icestaff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\icestaff_bee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\icestaff_rose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\jammypreserves.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\jellybean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\kabobs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\killerbee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\klaussackkey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\krampus_sack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lamb_winter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lantern.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lantern_lit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lavaarena_armorextraheavy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lavaarena_armorheavy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lavaarena_armorlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lavaarena_armorlightspeed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lavaarena_armormedium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lavaarena_armormediumdamager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lavaarena_armormediumrecharger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lavaarena_crowndamagerhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lavaarena_eyecirclethat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lavaarena_feathercrownhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lavaarena_healingflowerhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lavaarena_healinggarlandhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lavaarena_lightdamagerhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lavaarena_rechargerhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lavaarena_strongdamagerhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lavaarena_tiaraflowerpetalshat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lavae_cocoon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lavae_egg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lavae_egg_cracked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lavae_tooth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lifeinjector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lightbulb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lighter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lightning_rod.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lightninggoathorn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\livinglog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lucky_goldnugget.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lucy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\lureplantbulb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\mandrake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\mandrakesoup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\mapscroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\mapscroll_cave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\marble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\marblebean.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\meat_dried.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\meatrack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\minerhat_floppy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\minifan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\minisign_drawn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\minisign_item.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\minotaurhorn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\mole.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\molehat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\monsterlasagna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\monstermeat_dried.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\moondial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\moonrockcrater.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\moonrocknugget.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\mosquito.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\mosquitosack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\multitool_axe_pickaxe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\mushroom_farm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\mushroom_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\mushroom_light2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\nightlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\nightmare_timepiece.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\nightmare_timepiece_nightmare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\nightmare_timepiece_warn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\nightmarefuel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\nightstick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\nitre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\onemanband.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\opalpreciousgem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\opalstaff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\orangeamulet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\orangegem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\orangemooneye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\orangestaff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\orangestaff_ancient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\panflute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\papyrus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\perdfan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\perdling_rooster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\perdling_winter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\perdshrine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\perogies.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\petals_evil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\phlegm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\pinecone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\pitchfork.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\plantmeat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\plantmeat_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\pomegranate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\pomegranate_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\pomegranate_seeds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\poop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\pottedfern.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\powcake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\pumpkin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\pumpkin_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\pumpkin_lantern.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\pumpkin_seeds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\pumpkincookie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\puppy_chow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\puppy_tzu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\puppy_winter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\purpleamulet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\purplegem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\purplemooneye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\rabbithouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\raincoat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\rainhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\rainhat_floppy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\rainometer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\ratatouille.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\razor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\red_cap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\red_cap_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\red_mushroomhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\redgem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\redlantern.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\redlantern_lit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\redmooneye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\redpouch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\reflectivevest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\researchlab.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\researchlab2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\researchlab2_pod.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\researchlab2_pod_alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\researchlab3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\researchlab4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\researchlab4_catcoon_costume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\researchlab4_chester_costume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\researchlab4_derby.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\researchlab4_festive_bell_red_firehound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\researchlab4_glommer_costume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\researchlab4_hutch_costume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\resurrectionstatue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\reviver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\reviver_cupid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\reviver_cupid_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\robin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\robin_winter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\rope.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\rottenegg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\royal_jelly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\ruins_bat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\ruinshat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\ruinsrelic_bowl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\ruinsrelic_chair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\ruinsrelic_chipbowl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\ruinsrelic_plate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\ruinsrelic_table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\ruinsrelic_vase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\saddle_basic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\saddle_race.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\saddle_war.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\saddlehorn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\saltlick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\scarecrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\sculpting_material.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\sculptingtable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\sculpture_bishophead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\sculpture_knighthead.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\sculpture_rooknose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\seeds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\seeds_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\sentryward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\sewing_kit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\sewing_tape.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\shadowdigger_builder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\shadowduelist_builder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\shadowheart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\shadowlumber_builder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\shadowminer_builder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\shovel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\shroom_skin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\siestahut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\silk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\skeletonhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\sketch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\skull_webber.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\skull_wendy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\skull_wes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\skull_wickerbottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\skull_willow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\skull_wilson.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\skull_wolfgang.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\skull_woodie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\skull_wx78.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\sleepbomb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\slow_farmplot.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\slurper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\slurper_pelt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\slurtle_shellpieces.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\slurtlehat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\slurtleslime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\smallmeat_dried.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\snowball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\spear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\spear_bee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\spear_gungnir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\spear_lance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\spear_wathgrithr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\spidereggsack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\spiderhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\spoiled_food.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\spore_medium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\spore_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\spore_tall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\staff_tornado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\steelwool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\stinger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\strawhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\stuffedeggplant.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\succulent_picked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\succulent_potted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\sweatervest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\taffy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\tallbirdegg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\tallbirdegg_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\tallbirdegg_cracked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\telebase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\teleportato_base.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\teleportato_box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\teleportato_box_adv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\teleportato_crank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\teleportato_crank_adv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\teleportato_potato.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\teleportato_potato_adv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\teleportato_ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\teleportato_ring_adv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\telestaff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\tentaclespots.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\thulecite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\thulecite_pieces.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\thurible.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\tophat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\tophat_derby.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\torch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\torch_rag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\torch_shadow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\torch_spooky.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\townportal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\townportaltalisman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\townportaltalisman_active.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trailmix.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\transistor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trap_teeth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\treasurechest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\treasurechest_carpetbag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\treasurechest_gingerbread.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\treasurechest_posh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\treasurechest_poshprint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\treasurechest_sacred.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\treasurechest_steamertrunk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\treasurechest_traincase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\treasurechest_traveltrunk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_15.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_17.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_19.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_23.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_25.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_27.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_28.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_33.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_34.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_37.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_38.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_39.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_41.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_42.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_43.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_44.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_45.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trinket_46.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trunk_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trunk_summer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trunk_winter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trunkvest_summer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\trunkvest_winter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\turf_carpetfloor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\turf_cave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\turf_checkerfloor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\turf_deciduous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\turf_desertdirt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\turf_dragonfly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\turf_forest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\turf_fungus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\turf_fungus_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\turf_fungus_red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\turf_grass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\turf_marsh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\turf_mud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\turf_road.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\turf_rocky.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\turf_savanna.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\turf_sinkhole.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\turf_underrock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\turf_woodfloor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\twiggy_nut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\umbrella.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\unagi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\unknown_body.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\unknown_hand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\unknown_head.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\waffles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\wall_hay_item.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\wall_moonrock_item.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\wall_ruins_item.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\wall_stone_item.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\wall_wood_item.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\walrus_tusk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\wardrobe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\wargshrine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\waterballoon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\watermelon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\watermelon_cooked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\watermelon_seeds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\watermelonhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\watermelonicle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\wathgrithrhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\waxpaper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\waxwelljournal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\wetgoop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\wetpouch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\whip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_food1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_food2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_food3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_food4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_food5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_food6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_food7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_food8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_food9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_boss_antlion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_boss_bearger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_boss_beequeen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_boss_deerclops.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_boss_dragonfly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_boss_fuelweaver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_boss_klaus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_boss_krampus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_boss_moose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_boss_noeyeblue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_boss_noeyered.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_boss_toadstool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_fancy1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_fancy2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_fancy3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_fancy4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_fancy5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_fancy6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_fancy7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_fancy8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_light1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_light2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_light3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_light4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_light5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_light6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_light7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_light8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_plain1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_plain2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_plain3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_plain4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_plain5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_plain6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_plain7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_plain8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_plain9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_plain10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_plain11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_ornament_plain12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winter_treestand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winterhat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winterhat_black_davys.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winterhat_fancy_puppy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winterhat_pink_hibiscus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winterhat_plum_pudding.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winterhat_rooster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winterhat_stocking_cap_green_forest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\winterometer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\wormlight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\wormlight_lesser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\yellowamulet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\yellowgem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\yellowmooneye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\yellowstaff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\clothes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\fight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\food.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\live.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\prefabs\tool.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,23 @@
+文件命名：enterorder从1开始
+Address.name+enterorder  //表示是第几次进入地点时播放的文字
+Address.name+enterorder+'_'+buttonname+usetime  //根据按钮的使用情况来，不做规定，那两个系数可以自己调
+
+
+
+梦开始的地方
+	到
+夏湾的小木屋
+	到
+神秘森林
+	到
+{	
+    破损之桥   -> 荒漠之丘
+	↓
+	鹤之桥
+
+     山峦聚
+ 
+     绿野仙踪
+}
+
+
